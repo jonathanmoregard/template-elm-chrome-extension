@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "template-elm-chrome-extension",
   "short_name": "template-elm-chrome-extension",
   "version": "#version#",
@@ -9,7 +9,7 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
-  "browser_action": {
+  "action": {
     "default_title": "Template Elm Chrome Extension",
     "default_icon": {
       "16": "icons/icon16.png",
@@ -19,10 +19,7 @@
     "default_popup": "app.html"
   },
   "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": true
+    "service_worker": "background.js"
   },
   "author": "Tyler Lentz",
   "permissions": [
