@@ -1,16 +1,12 @@
 /* global require module */
-
-const webpack = require("webpack");
 const WebpackMerge = require("webpack-merge");
 const commonConfig = require("./webpack.common.js");
-const ChromeExtensionReloader = require("webpack-chrome-extension-reloader");
+const ExtReloader = require("webpack-ext-reloader");
 
 module.exports = WebpackMerge(commonConfig, {
   devtool: "inline-source-map",
   plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
-    new ChromeExtensionReloader({
+    new ExtReloader({
       reloadPage: true, // Force the reload of the page also
       entries: {
         // The entries used for the content/background scripts
@@ -25,13 +21,16 @@ module.exports = WebpackMerge(commonConfig, {
         test: /\.elm$/,
         exclude: [/elm-stuff/, /node_modules/],
         use: [
-          { loader: "elm-hot-webpack-loader" },
+          {
+            loader: "elm-hot-webpack-loader"
+          },
           {
             loader: "elm-webpack-loader",
             options: {
               // add Elm's debug overlay to output
-              debug: false,
-              forceWatch: true
+              debug: true,
+              optimize: false,
+              cwd: __dirname
             }
           }
         ]

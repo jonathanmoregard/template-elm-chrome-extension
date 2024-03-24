@@ -16,10 +16,7 @@ A template repository for building a chrome extension with webpack and elm.
 
 - [clean-webpack-plugin](https://www.npmjs.com/package/clean-webpack-plugin) to clean the output directory before every build
 - [copy-webpack-plugin](https://www.npmjs.com/package/copy-webpack-plugin) to copy static resources to the output directory
-- [mini-css-extract-plugin](https://www.npmjs.com/package/mini-css-extract-plugin) to extract CSS stylesheets as a separate bundle to the output directory
-- [optimize-css-assets-webpack-plugin](https://www.npmjs.com/package/extract-text-webpack-plugin) to optimize the extracted CSS
 - [html-webpack-plugin](https://www.npmjs.com/package/html-webpack-plugin) to inject entry-points into the startup html page to the output directory
-- [uglifyjs-webpack-plugin](https://www.npmjs.com/package/uglifyjs-webpack-plugin) to minify JavaScript before bundling them to the output directory
 
 ##### Loaders
 
@@ -27,7 +24,6 @@ A template repository for building a chrome extension with webpack and elm.
 - [style-loader](https://www.npmjs.com/package/style-loader) to bundle CSS stylesheets
 - [css-loader](https://www.npmjs.com/package/css-loader) to work with style-loader for bundling of CSS stylesheets
 - [sass-loader](https://www.npmjs.com/package/sass-loader) to transpile SCSS into regular CSS
-- [file-loader](https://www.npmjs.com/package/file-loader) to work with other file types
 - [eslint-loader](https://www.npmjs.com/package/eslint-loader) to run ESLint on JavaScript files
 - [babel-loader](https://www.npmjs.com/package/babel-loader) to perform babel transpilations with the help of supporting dependencies
 - [elm-webpack-loader](https://www.npmjs.com/package/elm-webpack-loader) to load elm files

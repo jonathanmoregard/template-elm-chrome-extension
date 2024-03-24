@@ -1,6 +1,6 @@
 /* global require module */
 
-const outputDir = "public";
+const outputDir = "TemplateElmChromeExtension";
 
 const webpack = require("webpack");
 const WebpackMerge = require("webpack-merge");
@@ -8,7 +8,7 @@ const commonConfig = require("./webpack.common.js");
 
 module.exports = WebpackMerge(commonConfig, {
   devtool: "inline-source-map",
-  plugins: [new webpack.NamedModulesPlugin(), new webpack.NoEmitOnErrorsPlugin()],
+  plugins: [new webpack.NoEmitOnErrorsPlugin()],
   module: {
     rules: [
       {
@@ -21,17 +21,19 @@ module.exports = WebpackMerge(commonConfig, {
             options: {
               // add Elm's debug overlay to output
               debug: false,
-              forceWatch: true
-            }
-          }
-        ]
-      }
-    ]
+            },
+          },
+        ],
+      },
+    ],
   },
   devServer: {
-    contentBase: `./${outputDir}`,
+    static: {
+      staticOptions: { index: "app.html" },
+      directory: `./${outputDir}`,
+    },
     port: 9000,
-    inline: true,
-    stats: "errors-only"
-  }
+    hot: true,
+  },
+  stats: "errors-only",
 });
