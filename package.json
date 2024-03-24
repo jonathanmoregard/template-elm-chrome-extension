@@ -38,7 +38,7 @@
     "@babel/plugin-proposal-private-methods": "^7.12.1",
     "@babel/plugin-transform-classes": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
-    "axios": "^0.21.1",
+    "axios": "^0.28.0",
     "babel-eslint": "10.0.1",
     "babel-loader": "^8.2.2",
     "babel-preset-env": "1.7.0",
